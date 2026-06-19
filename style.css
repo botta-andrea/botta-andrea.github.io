@@ -1,0 +1,232 @@
+/* ===========================================================
+   Andrea Botta — site stylesheet
+   HOW TO CUSTOMIZE — read this first
+   ===========================================================
+
+   1) FONTS
+      --font-body  : used for paragraphs / running text
+      --font-head  : used for all headings (h1, h2, section titles)
+
+      Right now headings use "EB Garamond" (a classic serif close to
+      LaTeX's Computer Modern look) and body text uses the system
+      sans-serif stack (Helvetica/Arial/Segoe UI — whichever your OS has).
+
+      To switch to "everything Helvetica":
+        --font-body: Helvetica, Arial, sans-serif;
+        --font-head: Helvetica, Arial, sans-serif;
+      and you can delete the Google Fonts <link> tags in index.html / cv.html.
+
+      To switch to "everything LaTeX-like serif":
+        --font-body: "EB Garamond", Georgia, serif;
+        --font-head: "EB Garamond", Georgia, serif;
+
+      Other LaTeX-ish Google Fonts you could swap in for --font-head:
+      "Lora", "Source Serif 4", "Crimson Text" — just change the name
+      here AND in the Google Fonts <link> in both HTML files.
+
+   2) SIZES — change --font-size-base to scale all body text.
+      Change the --h1-size / --h2-size / --sub-size variables to scale
+      headings independently.
+
+   3) COLORS — --color-accent (blue) and --color-accent-2 (brown) are
+      used for the section labels, links and the professor names.
+      =========================================================== */
+
+:root{
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-head: "EB Garamond", Georgia, serif;
+
+  --font-size-base: 16px;
+  --h1-size: 40px;
+  --h2-size: 26px;
+  --sub-size: 20px;
+
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-soft: #666666;
+  --color-border: #e3e3e3;
+
+  --color-accent: #1d4e8f;   /* blue — section labels, nav active, links */
+  --color-accent-2: #6b4226; /* brown — professor names, secondary accents */
+
+  --content-width: 720px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 35%, white);
+}
+a:hover{ border-bottom-color: var(--color-accent); }
+
+/* NAV */
+nav{
+  border-bottom: 1px solid var(--color-border);
+  padding: 18px 0;
+}
+.nav-inner{
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.nav-name{
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--color-text);
+  border-bottom: none;
+}
+.nav-links{ display: flex; gap: 22px; }
+.nav-links a{
+  font-size: 14px;
+  color: var(--color-text-soft);
+  border-bottom: none;
+}
+.nav-links a:hover, .nav-links a.active{ color: var(--color-accent); }
+
+/* LAYOUT */
+.wrap{
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 56px 24px 40px;
+}
+
+/* PHOTO — see instructions in chat for how to add photo.jpg */
+.profile-photo{
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+  border: 1px solid var(--color-border);
+}
+
+/* HOME / INTRO */
+.intro h1{
+  font-family: var(--font-head);
+  font-size: var(--h1-size);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.subtitle{
+  font-size: 16px;
+  color: var(--color-text-soft);
+  margin-bottom: 28px;
+}
+.section-heading{
+  font-family: var(--font-head);
+  font-size: var(--h2-size);
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 32px 0 16px;
+}
+.intro p{ font-size: 15.5px; }
+
+.contacts{ margin-top: 22px; }
+.contact-row{ font-size: 14.5px; margin-bottom: 6px; }
+.contact-label{ color: var(--color-text-soft); margin-right: 4px; }
+
+.divider{
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 44px 0;
+}
+
+/* CV PAGE TITLES */
+.page-title{
+  font-family: var(--font-head);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 40px;
+}
+.sub-heading{
+  font-family: var(--font-head);
+  font-size: var(--sub-size);
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 48px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-accent);
+}
+section#education .sub-heading{ margin-top: 0; }
+
+/* ENTRIES (shared by home research list and CV) */
+.entry{ margin-bottom: 28px; }
+.entry:last-child{ margin-bottom: 0; }
+.entry-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+}
+.entry-title{ font-family: var(--font-head); font-size: 19px; font-weight: 600; }
+.entry-date{ font-size: 13px; color: var(--color-text-soft); white-space: nowrap; }
+.entry-meta{ font-size: 13.5px; color: var(--color-text-soft); margin: 3px 0 8px; }
+.entry-desc{ font-size: 14.5px; color: #2e2e2e; }
+.entry-list{ margin: 8px 0 0 18px; font-size: 14.5px; color: #2e2e2e; }
+.entry-list li{ margin-bottom: 4px; }
+.entry-links{ display: flex; gap: 18px; margin-top: 8px; }
+.entry-link{ font-size: 13.5px; }
+
+/* Professor / lecturer names */
+.prof{ color: var(--color-accent-2); font-weight: 600; }
+
+/* SKILLS GRID (CV page) */
+.skills-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+  margin-bottom: 28px;
+}
+.skill-block h4{
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent-2);
+  margin-bottom: 6px;
+}
+.skill-block p{ font-size: 14px; color: #2e2e2e; }
+
+.lang-list{ border-top: 1px solid var(--color-border); }
+.lang-row{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.lang-level{ color: var(--color-text-soft); font-size: 13.5px; }
+
+/* FOOTER */
+footer{
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+  font-size: 12.5px;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 600px){
+  .intro h1{ font-size: 30px; }
+  .page-title{ font-size: 32px; }
+  .skills-grid{ grid-template-columns: 1fr; }
+  .nav-inner{ flex-direction: column; align-items: flex-start; }
+}
