@@ -159,45 +159,71 @@ section#education .sub-heading{ margin-top: 0; }
 /* ENTRIES — plain rows (CV page) */
 .entry{ margin-bottom: 14px; }
 .entry:last-child{ margin-bottom: 0; }
-/* Layout Timeline per il CV (Data a sinistra, linea al centro, contenuto a destra) */
+/* Layout Timeline per il CV (Data a sinistra, linea continua unica, contenuto a destra) */
 .timeline-section {
-  display: grid;
-  grid-template-columns: 140px 1fr; /* 140px per la data, il resto per il testo */
-  margin-top: 16px;
-  margin-bottom: 24px;
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 32px;
 }
 
+/* Questa è la vera e propria linea verticale continua che attraversa tutta la sezione */
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 140px; /* Definisce l'esatta posizione della linea verticale */
+  width: 3px;
+  background-color: var(--color-border);
+}
+
+/* Contenitore per ogni singola voce del CV */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* La data che sta a sinistra della linea */
 .timeline-date {
+  width: 140px; /* Deve coincidere con il "left" della linea qui sopra */
+  padding-right: 16px;
   font-size: 13px;
   color: var(--color-accent);
-  padding-right: 16px;
-  padding-top: 2px; /* Allinea il testo della data all'altezza del titolo */
+  padding-top: 2px; /* Allinea la data con la prima riga del testo a destra */
   text-align: left;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
+/* Il contenuto che sta a destra della linea */
 .timeline-content {
-  border-left: 3px solid var(--color-border);
-  padding-left: 20px;
-  padding-bottom: 32px; /* Spazio tra i blocchi mantenendo la linea unita */
+  flex: 1;
+  padding-left: 20px; /* Spazio tra la linea verticale e il testo */
+  box-sizing: border-box;
 }
 
-.timeline-content.last {
-  padding-bottom: 0; /* Rimuove la coda della linea dopo l'ultimo elemento */
-}
-
-/* Rende il layout impilato sui telefoni */
-@media (max-width: 600px){
-  .timeline-section {
-    grid-template-columns: 1fr;
+/* Adattamento per gli schermi piccoli (cellulari) */
+@media (max-width: 600px) {
+  .timeline-section::before {
+    left: 0; /* Sposta la linea tutta a sinistra */
+  }
+  .timeline-item {
+    flex-direction: column;
   }
   .timeline-date {
-    padding-bottom: 4px;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 16px;
+    padding-bottom: 8px;
   }
   .timeline-content {
-    border-left: 3px solid var(--color-border);
     padding-left: 16px;
-    padding-bottom: 24px;
-    margin-bottom: 8px;
   }
 }
 .entry-title{ font-size: 15.5px; font-weight: 600; color: var(--color-text); }
