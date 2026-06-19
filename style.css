@@ -159,20 +159,46 @@ section#education .sub-heading{ margin-top: 0; }
 /* ENTRIES — plain rows (CV page) */
 .entry{ margin-bottom: 14px; }
 .entry:last-child{ margin-bottom: 0; }
-.entry-head{
-  display: flex;
-  justify-content: flex-start; /* Allinea tutto a sinistra */
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px;
+/* Layout Timeline per il CV (Data a sinistra, linea al centro, contenuto a destra) */
+.timeline-section {
+  display: grid;
+  grid-template-columns: 140px 1fr; /* 140px per la data, il resto per il testo */
+  margin-top: 16px;
+  margin-bottom: 24px;
 }
 
-/* Nuova classe per la sbarretta | tra data e titolo */
-.entry-separator {
-  color: var(--color-text-soft);
-  font-size: 14px;
-  font-weight: 400;
-};
+.timeline-date {
+  font-size: 13px;
+  color: var(--color-accent);
+  padding-right: 16px;
+  padding-top: 2px; /* Allinea il testo della data all'altezza del titolo */
+  text-align: left;
+}
+
+.timeline-content {
+  border-left: 3px solid var(--color-border);
+  padding-left: 20px;
+  padding-bottom: 32px; /* Spazio tra i blocchi mantenendo la linea unita */
+}
+
+.timeline-content.last {
+  padding-bottom: 0; /* Rimuove la coda della linea dopo l'ultimo elemento */
+}
+
+/* Rende il layout impilato sui telefoni */
+@media (max-width: 600px){
+  .timeline-section {
+    grid-template-columns: 1fr;
+  }
+  .timeline-date {
+    padding-bottom: 4px;
+  }
+  .timeline-content {
+    border-left: 3px solid var(--color-border);
+    padding-left: 16px;
+    padding-bottom: 24px;
+    margin-bottom: 8px;
+  }
 }
 .entry-title{ font-size: 15.5px; font-weight: 600; color: var(--color-text); }
 .entry-title a{ color: var(--color-text); border-bottom: 1px solid transparent; }
