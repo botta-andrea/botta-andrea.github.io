@@ -161,10 +161,18 @@ section#education .sub-heading{ margin-top: 0; }
 .entry:last-child{ margin-bottom: 0; }
 .entry-head{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Allinea tutto a sinistra */
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 0 14px;
+  gap: 8px;
+}
+
+/* Nuova classe per la sbarretta | tra data e titolo */
+.entry-separator {
+  color: var(--color-text-soft);
+  font-size: 14px;
+  font-weight: 400;
+};
 }
 .entry-title{ font-size: 15.5px; font-weight: 600; color: var(--color-text); }
 .entry-title a{ color: var(--color-text); border-bottom: 1px solid transparent; }
