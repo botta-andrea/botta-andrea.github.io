@@ -132,7 +132,7 @@ section#home .section-heading{ margin-top: 0; }
 .divider{
   border: none;
   border-top: 1px solid var(--color-border);
-  margin: 40px 0;
+  margin: 70px 0; /* Modifica questo numero a tuo piacimento (es. 60px, 80px) */
 }
 
 /* CV PAGE TITLES */
