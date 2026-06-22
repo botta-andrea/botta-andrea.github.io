@@ -21,11 +21,17 @@
 
 <main class="wrap">
 
-  <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 36px; border-bottom: 1px solid var(--color-border); padding-bottom: 8px;">
-    <h1 class="page-title" style="margin-bottom: 0;">Curriculum Vitae</h1>
-    <a href="cv.pdf" target="_blank" style="font-size: 14.5px; font-weight: 600; color: var(--color-accent); border-bottom: none;">
-      View Full PDF →
-    </a>
+  <!-- Sottotitolo ed estratto CV -->
+  <div style="margin-bottom: 36px; border-bottom: 1px solid var(--color-border); padding-bottom: 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px;">
+      <h1 class="page-title" style="margin-bottom: 0;">Curriculum Vitae</h1>
+      <a href="cv.pdf" target="_blank" style="font-size: 14.5px; font-weight: 600; color: var(--color-accent); border-bottom: none;">
+        Download Full PDF →
+      </a>
+    </div>
+    <p style="font-size: 14.5px; color: var(--color-text-soft); margin: 0; line-height: 1.5;">
+      Below is a brief overview of my academic and professional background. For comprehensive details regarding my coursework, projects, and full technical skills, please refer to the official PDF version.
+    </p>
   </div>
 
   <section id="education">
@@ -39,13 +45,8 @@
           <div class="entry-title">USI Università della Svizzera italiana, Lugano</div>
           <div class="entry-meta"><span style="color: var(--color-accent); font-weight: bold;">BSc in Economics, Finance Stream</span> | Current GPA 9.38/10</div>
           <p class="entry-desc">
-            Finance Stream, with electives from the Quantitative Methods minor and the BSc in Data Science. Full-tuition merit
-            scholarship (two years), currently on partial merit scholarship.
+            Full-tuition merit scholar. Thesis: <em>Asset Allocation via ML and Factor Models</em> (Supervisor: Prof. P. Gagliardini).
           </p>
-          <ul class="entry-list">
-            <li>Thesis: <em>Asset Allocation via Machine Learning and Factor Models: An Empirical Evaluation of Portfolio Optimization Approaches</em> — Supervisor <span class="prof">Prof. Patrick Gagliardini</span> (USI, Swiss Finance Institute)</li>
-            <li>Co-Founder &amp; Treasurer at Starting Finance Club USI, Quantitative Finance Research Division</li>
-          </ul>
           <div class="entry-links" style="margin-top: 12px;">
             <a href="https://www.desk.usi.ch/it/piano-degli-studi-bachelor-in-scienze-economiche" target="_blank">Link to the program →</a>
           </div>
@@ -61,8 +62,7 @@
             <div>Lecturer: <span class="prof">J. Gil-Bazo</span> (BSE)</div>
           </div>
           <p class="entry-desc">
-            Master/PhD-level course covering portfolio optimization, downside and estimation risk,
-            multi-factor models, and machine learning applications in portfolio decisions.
+            Master/PhD-level intensive course covering portfolio optimization, downside risk, and ML applications.
           </p>
           <div class="entry-links" style="margin-top: 12px;">
             <a href="https://bse.eu/summer-school/finance/advanced-portfolio-management" target="_blank">Link to the program →</a>
@@ -76,8 +76,7 @@
           <div class="entry-title">Liceo Scientifico Statale Orazio Grassi, Savona</div>
           <div class="entry-meta"><span style="color: var(--color-accent); font-weight: bold;">Scientific High School Diploma</span> | Grade 100/100</div>
           <p class="entry-desc">
-            UNIGE Summer School 2022 (Economics &amp; Business); Advanced Math &amp; Physics program with
-            a study visit to CERN.
+            Advanced Math &amp; Physics program; UNIGE Summer School 2022.
           </p>
         </div>
       </div>
@@ -93,11 +92,10 @@
       <div class="timeline-item">
         <div class="timeline-date">09/2025 – Present</div>
         <div class="timeline-content">
-          <div class="entry-title">Co-Founder, Treasurer &amp; Lead Quant Researcher</div>
+          <div class="entry-title">Co-Founder, Treasurer &amp; Quant Finance Division</div>
           <div class="entry-meta" style="font-weight: bold;">Starting Finance Club USI, Lugano</div>
           <p class="entry-desc">
-            Managed financial planning and budgeting as Treasurer; leading the early-stage development of
-            the club's Quantitative Finance research division.
+            Co-founded the association, managed finances, and established the Quantitative Finance research division.
           </p>
           <div class="entry-links" style="margin-top: 12px;">
             <a href="https://www.linkedin.com/company/starting-finance-club-usi/" target="_blank">Link to LinkedIn page →</a>
@@ -110,7 +108,7 @@
         <div class="timeline-content">
           <div class="entry-title">Library Assistant</div>
           <div class="entry-meta" style="font-weight: bold;">Biblioteca Universitaria di Lugano, USI</div>
-          <p class="entry-desc">Front-desk management and bibliographic research assistance using university databases.</p>
+          <p class="entry-desc">Front-desk management and bibliographic research.</p>
         </div>
       </div>
 
@@ -119,7 +117,7 @@
         <div class="timeline-content">
           <div class="entry-title">Private Tutor — Mathematics &amp; Physics</div>
           <div class="entry-meta" style="font-weight: bold;">Independent</div>
-          <p class="entry-desc">Tailored lessons for high school and university students; currently following 3 students.</p>
+          <p class="entry-desc">Tailored STEM tutoring for high school and university students.</p>
         </div>
       </div>
 
@@ -131,19 +129,19 @@
     <div class="skills-grid">
       <div class="skill-block">
         <h4>Programming</h4>
-        <p>Python (Pandas, Scikit-learn, SciPy, NumPy, Matplotlib) and R (Tidyverse, Quantmod) for financial modeling and data visualization.</p>
+        <p>Python (Pandas, Scikit-learn, SciPy) and R (Tidyverse, Quantmod).</p>
       </div>
       <div class="skill-block">
         <h4>Quantitative Modeling</h4>
-        <p>Factor-based pricing, cross-sectional econometrics, systematic backtesting. Mean-Variance, Black-Litterman, VaR/CVaR optimization via SLSQP.</p>
+        <p>Factor-based pricing, systematic backtesting, and VaR/CVaR optimization.</p>
       </div>
       <div class="skill-block">
         <h4>Machine Learning</h4>
-        <p>Supervised learning, LASSO/Ridge regularization, and Neural Networks for asset pricing and FX forecasting.</p>
+        <p>Supervised learning, LASSO/Ridge, and Neural Networks.</p>
       </div>
       <div class="skill-block">
         <h4>Software</h4>
-        <p>Excel/VBA (advanced), Bloomberg Terminal, MATLAB, SQL, LaTeX for technical reporting.</p>
+        <p>Excel/VBA, Bloomberg Terminal, SQL, and LaTeX.</p>
       </div>
     </div>
 
@@ -165,7 +163,7 @@
         <div class="timeline-content">
           <div class="entry-title">Volunteer Scout Leader</div>
           <div class="entry-meta" style="font-weight: bold;">AGESCI Varazze 1</div>
-          <p class="entry-desc">Developing leadership, teamwork, and responsibility through dedicated community service (Member since 2009).</p>
+          <p class="entry-desc">Leadership and community service (Member since 2009).</p>
         </div>
       </div>
 
@@ -174,7 +172,7 @@
         <div class="timeline-content">
           <div class="entry-title">Track &amp; Field Athlete</div>
           <div class="entry-meta" style="font-weight: bold;">Atletica Arcobaleno Savona (FIDAL)</div>
-          <p class="entry-desc">Competitive at regional and national levels (specialities: 400m hurdles and long jump).</p>
+          <p class="entry-desc">Competitive 400m hurdles and long jump.</p>
         </div>
       </div>
 
