@@ -135,7 +135,7 @@ section#home .section-heading{ margin-top: 0; }
 .divider{
   border: none;
   border-top: 1px solid var(--color-border);
-  margin: 65px 0; /* Spazio aumentato */
+  margin: 65px 0;
 }
 
 /* ================= NEWS & FEATURED GRID (Sotto la riga) ================= */
@@ -154,16 +154,17 @@ section#home .section-heading{ margin-top: 0; }
   color: #2e2e2e;
 }
 .news-list li {
-  margin-bottom: 14px;
-  padding: 4px 0 4px 14px; /* Spazio interno tra la barra e il testo */
-  border-left: 3px solid var(--color-border); /* Barra grigia verticale */
+  margin-bottom: 12px;
   display: flex;
   align-items: flex-start;
   line-height: 1.5;
-  transition: border-color 0.15s ease; /* Effetto hover morbido */
 }
-.news-list li:hover {
-  border-left-color: var(--color-accent); /* La barra si illumina di blu al passaggio */
+.news-icon {
+  color: var(--color-accent);
+  font-size: 11px;
+  margin-top: 5px;
+  margin-right: 12px;
+  flex-shrink: 0;
 }
 .news-date {
   font-weight: 600;
