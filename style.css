@@ -52,8 +52,12 @@ a{
 }
 a:hover{ border-bottom-color: var(--color-accent); }
 
-/* NAV */
+/* ================= NAV ================= */
 nav{
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  z-index: 1000;
   border-bottom: 1px solid var(--color-border);
   padding: 18px 0;
 }
@@ -69,7 +73,7 @@ nav{
 }
 .nav-name{
   font-weight: 600;
-  font-size: 15px;
+  font-size: 18px; /* Nome leggermente ingrandito */
   color: var(--color-text);
   border-bottom: none;
 }
@@ -81,7 +85,7 @@ nav{
 }
 .nav-links a:hover, .nav-links a.active{ color: var(--color-accent); }
 
-/* LAYOUT */
+/* ================= LAYOUT ================= */
 .wrap{
   max-width: var(--content-width);
   margin: 0 auto;
@@ -125,9 +129,16 @@ nav{
 section#home .section-heading{ margin-top: 0; }
 .intro p{ font-size: 15.5px; text-align: justify; }
 
+/* ================= CONTACTS & ICONS ================= */
 .contacts{ margin-top: 20px; }
-.contact-row{ font-size: 14.5px; margin-bottom: 6px; }
+.contact-row{ font-size: 14.5px; margin-bottom: 6px; display: flex; align-items: center; }
 .contact-label{ color: var(--color-text-soft); margin-right: 4px; }
+.contact-icon {
+  color: var(--color-accent);
+  width: 20px;
+  text-align: center;
+  margin-right: 8px;
+}
 
 .divider{
   border: none;
@@ -135,7 +146,7 @@ section#home .section-heading{ margin-top: 0; }
   margin: 40px 0;
 }
 
-/* CV PAGE TITLES */
+/* ================= CV PAGE TITLES ================= */
 .page-title{
   font-size: 26px;
   font-weight: 700;
@@ -156,7 +167,7 @@ section#home .section-heading{ margin-top: 0; }
 }
 section#education .sub-heading{ margin-top: 0; }
 
-/* ENTRIES — plain rows (CV page) */
+/* ENTRIES — plain rows */
 .entry{ margin-bottom: 14px; }
 .entry:last-child{ margin-bottom: 0; }
 .entry-head{
@@ -198,7 +209,7 @@ section#education .sub-heading{ margin-top: 0; }
 /* Professor / lecturer names */
 .prof{ color: var(--color-accent); font-weight: 600; }
 
-/* SKILLS GRID (CV page) */
+/* SKILLS GRID */
 .skills-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -224,11 +235,17 @@ section#education .sub-heading{ margin-top: 0; }
 }
 .lang-level{ color: var(--color-accent); font-size: 13.5px; }
 
-/* FOOTER */
-footer{
+/* ================= FOOTER ================= */
+footer {
+  background-color: #f5f5f5; /* Barra grigia a larghezza intera */
+  border-top: 1px solid var(--color-border);
+  padding: 24px 0;
+  margin-top: 50px;
+}
+.footer-inner {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 24px 24px 60px;
+  padding: 0 24px;
   font-size: 12.5px;
   color: var(--color-text-soft);
   text-align: center;
@@ -241,12 +258,12 @@ footer{
   .skills-grid{ grid-template-columns: 1fr; }
   .nav-inner{ flex-direction: column; align-items: flex-start; }
 }
+
 /* =====================================================
    CV PAGE — single-screen, two-column layout
    Everything visible on load: chronological history on
    the left, capabilities/extras on the right, separated
-   by a thin accent-toned rule (the page's one signature
-   device — it echoes the accent underline on each heading).
+   by a thin accent-toned rule.
    ===================================================== */
 
 .cv-page .wrap{ max-width: 940px; padding: 40px 24px 28px; }
@@ -284,7 +301,7 @@ footer{
 .cv-col > section + section{ margin-top: 20px; }
 
 /* Section headings — small caps, accent rule */
-.sub-heading{
+.cv-page .sub-heading{
   font-size: 11.5px;
   font-weight: 700;
   text-transform: uppercase;
@@ -303,6 +320,24 @@ footer{
   transition: background 0.12s ease;
 }
 .cv-card:hover{ background: #f2f6fc; }
+
+/* CV LOGOS (Struttura per loghi accanto al testo) */
+.cv-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.cv-logo {
+  width: 42px; /* Dimensione loghi */
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.cv-card-content {
+  flex: 1;
+}
+
 .cv-card-date{
   font-size: 11px;
   font-weight: 700;
@@ -395,7 +430,7 @@ footer{
 .cv-pdf-bottom a:hover{ border-bottom: 1px solid var(--color-accent); }
 
 /* Footer compact on CV page */
-.cv-page footer{ padding-top: 12px; padding-bottom: 22px; }
+.cv-page footer { padding-top: 24px; padding-bottom: 24px; }
 
 @media (max-width: 760px){
   .cv-grid{ grid-template-columns: 1fr; }
