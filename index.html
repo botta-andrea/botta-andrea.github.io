@@ -22,42 +22,100 @@
 </nav>
 
 <main class="wrap">
-
-  <section id="home" class="intro">
-    <div class="intro-header">
+  
+  <div class="home-grid">
+    
+    <!-- COLONNA DI SINISTRA (Profilo e Contatti) -->
+    <aside class="home-sidebar">
       <img src="photo.jpg" alt="Andrea Botta" class="profile-photo">
+      <h1>Andrea Botta</h1>
+      <p class="subtitle">MSc in Quant Finance @ UniTO & Senior Allievo @ CCA</p>
+      <p class="subtitle" style="margin-top: 4px;">BSc in Economics and Finance @ USI</p>
+      
+      <div class="contacts">
+        <div class="contact-row">
+          <i class="fas fa-envelope contact-icon"></i> 
+          <a href="mailto:ab.andreabotta@gmail.com">ab.andreabotta@gmail.com</a>
+        </div>
+        <div class="contact-row">
+          <i class="fas fa-university contact-icon"></i> 
+          <a href="mailto:tuo.nome@carloalberto.org">tuo.nome@carloalberto.org</a>
+        </div>
+        <div class="contact-row">
+          <i class="fab fa-github contact-icon"></i> 
+          <a href="https://github.com/botta-andrea" target="_blank">botta-andrea</a>
+        </div>
+        <div class="contact-row">
+          <i class="fab fa-linkedin contact-icon"></i> 
+          <a href="https://linkedin.com/in/botta-andrea" target="_blank">botta-andrea</a>
+        </div>
+      </div>
+    </aside>
 
-      <div class="intro-text">
-        <h1>Andrea Botta</h1>
-        <p class="subtitle">MSc in Quant Finance @ UniTO & Senior Allievo @ CCA | BSc in Economics and Finance @ USI</p>
-      </div>
-    </div>
+    <!-- COLONNA DI DESTRA (Contenuti testuali) -->
+    <div class="home-content">
+      
+      <section id="about">
+        <h2 class="section-heading">About</h2>
+        <p>
+          MSc student in Quantitative Finance and Insurance at UniTO and Senior Allievo at Collegio Carlo Alberto (Economics, Statistics and Applied Mathematics track). 
+          BSc in Economics and Finance graduate from USI and Co-founder at Starting Finance Club USI. 
+        </p>
+      </section>
 
-    <h2 class="section-heading">About</h2>
-    <p>
-      MSc student in Quantitative Finance and Insurance at UniTO and Senior Allievo at Collegio Carlo Alberto (Economics, Statistics and Applied Mathematics track). 
-      BSc in Economics and Finance graduate from USI and Co-founder at Starting Finance Club USI. 
-    </p>
+      <!-- ======================================================================
+           INIZIO SEZIONE NEWS
+           Per spegnere (mettere in OFF) questa sezione, aggiungi un "<!--"
+           esattamente prima del tag <section id="news"> qui sotto.
+           Per riaccenderla, ti basterà toglierlo.
+           ====================================================================== -->
+      <section id="news">
+        <h2 class="section-heading">Recent News</h2>
+        <ul class="news-list">
+          <li><span class="news-date">Sept 2026:</span> Started my MSc in Quantitative Finance at UniTO and joined Collegio Carlo Alberto as a Senior Allievo.</li>
+          <li><span class="news-date">July 2026:</span> Graduated with a BSc in Economics and Finance from USI Lugano (GPA 9.36/10).</li>
+          <li><span class="news-date">June 2026:</span> Published a working paper on Commodity Assets with Starting Finance Club USI.</li>
+        </ul>
+      </section>
+      <!-- ======================================================================
+           Se hai aggiunto il "<!--" sopra per spegnere, devi chiudere il commento
+           aggiungendo "-->" esattamente qui, dopo </section>.
+           ====================================================================== -->
 
-    <div class="contacts">
-      <div class="contact-row">
-        <i class="fas fa-envelope contact-icon"></i> 
-        <a href="mailto:ab.andreabotta@gmail.com">ab.andreabotta@gmail.com</a>
-      </div>
-      <div class="contact-row">
-        <i class="fas fa-university contact-icon"></i> 
-        <a href="mailto:tuo.nome@carloalberto.org">andrea.botta@carloalberto.org</a>
-      </div>
-      <div class="contact-row">
-        <i class="fab fa-github contact-icon"></i> 
-        <a href="https://github.com/botta-andrea" target="_blank">botta-andrea</a>
-      </div>
-      <div class="contact-row">
-        <i class="fab fa-linkedin contact-icon"></i> 
-        <a href="https://linkedin.com/in/botta-andrea" target="_blank">botta-andrea</a>
-      </div>
-    </div>
-  </section>
+      <!-- ======================================================================
+           INIZIO SEZIONE PROGETTO IN EVIDENZA
+           Stessa regola: aggiungi "<!--" prima di <section id="featured"> per nascondere.
+           ====================================================================== -->
+      <section id="featured">
+        <h2 class="section-heading">Selected Work</h2>
+        
+        <div class="entry-card">
+          <div class="entry-title">Asset Allocation via Machine Learning and Factor Models: An Empirical Evaluation of Portfolio Optimization Approaches</div>
+          <div class="entry-meta-block">
+            <div>Bachelor Thesis, USI</div>
+            <div class="meta-date">May 2026</div>
+          </div>
+          <p class="entry-desc">
+            Python backtesting framework for multi-asset strategies, integrating Fama-French factors and Goyal et al. predictors 
+            via machine learning for return forecasting, with Mean-Variance Optimization under 
+            Ledoit-Wolf shrinkage and turnover constraints.
+          </p>
+          <div class="entry-links">
+            <a href="Botta_Andrea_Bachelor_Thesis_USI.pdf" target="_blank">PDF</a>
+            <a href="https://github.com/botta-andrea/Bachelor_Thesis_USI-Asset_Allocation_via_ML_Factor-Models" target="_blank">Repository</a>
+          </div>
+        </div>
+        
+        <div class="view-all-link">
+          <a href="research.html">View all projects and research →</a>
+        </div>
+      </section>
+      <!-- ======================================================================
+           Se hai aggiunto il "<!--" sopra per spegnere, aggiungi "-->" qui.
+           ====================================================================== -->
+
+    </div> <!-- Fine colonna di destra -->
+  </div> <!-- Fine Grid -->
 
 </main>
 
