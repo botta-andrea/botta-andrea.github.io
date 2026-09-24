@@ -43,6 +43,11 @@ body{
   background: var(--color-bg);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  
+  /* Flexbox per spingere sempre il footer in basso */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a{
@@ -88,8 +93,12 @@ nav{
 /* ================= LAYOUT ================= */
 .wrap{
   max-width: var(--content-width);
+  width: 100%;
   margin: 0 auto;
   padding: 56px 24px 40px;
+  
+  /* Permette al contenuto di espandersi e spingere il footer */
+  flex: 1; 
 }
 
 /* INTRO HEADER — photo next to name/subtitle */
@@ -237,10 +246,11 @@ section#education .sub-heading{ margin-top: 0; }
 
 /* ================= FOOTER ================= */
 footer {
-  background-color: #f5f5f5; /* Barra grigia a larghezza intera */
+  background-color: #fafafa; /* Grigio chiaro e delicato */
   border-top: 1px solid var(--color-border);
   padding: 24px 0;
-  margin-top: 50px;
+  width: 100%;
+  margin-top: auto; /* Mantiene il footer in fondo alla pagina */
 }
 .footer-inner {
   max-width: var(--content-width);
@@ -249,6 +259,17 @@ footer {
   font-size: 12.5px;
   color: var(--color-text-soft);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.footer-contact a {
+  color: var(--color-text-soft);
+  border-bottom: none;
+  transition: color 0.2s ease;
+}
+.footer-contact a:hover {
+  color: var(--color-accent);
 }
 
 @media (max-width: 600px){
@@ -261,9 +282,6 @@ footer {
 
 /* =====================================================
    CV PAGE — single-screen, two-column layout
-   Everything visible on load: chronological history on
-   the left, capabilities/extras on the right, separated
-   by a thin accent-toned rule.
    ===================================================== */
 
 .cv-page .wrap{ max-width: 940px; padding: 40px 24px 28px; }
@@ -312,7 +330,7 @@ footer {
   border-bottom: 1.5px solid var(--color-accent);
 }
 
-/* CV cards — dense stacked rows: date, then title, then meta, then links */
+/* CV cards — dense stacked rows */
 .cv-card{
   padding: 7px 8px;
   margin: 0 -8px 2px;
@@ -321,14 +339,14 @@ footer {
 }
 .cv-card:hover{ background: #f2f6fc; }
 
-/* CV LOGOS (Struttura per loghi accanto al testo) */
+/* CV LOGOS */
 .cv-card-header {
   display: flex;
   align-items: flex-start;
   gap: 14px;
 }
 .cv-logo {
-  width: 42px; /* Dimensione loghi */
+  width: 42px;
   height: 42px;
   object-fit: contain;
   flex-shrink: 0;
@@ -370,7 +388,6 @@ footer {
 }
 .cv-card-sub a:hover{ border-bottom: 1px solid var(--color-accent); }
 
-/* Project link line — own row, brief description after the link */
 .cv-card-link{
   font-size: 12px;
   color: var(--color-text-soft);
@@ -387,7 +404,7 @@ footer {
 }
 .cv-card-link a:hover{ border-bottom: 1px solid var(--color-accent); }
 
-/* Skills — stacked compact blocks (single column suits the narrower right side) */
+/* Skills */
 .cv-skills-grid{
   display: flex;
   flex-direction: column;
@@ -428,9 +445,6 @@ footer {
   border-bottom: none;
 }
 .cv-pdf-bottom a:hover{ border-bottom: 1px solid var(--color-accent); }
-
-/* Footer compact on CV page */
-.cv-page footer { padding-top: 24px; padding-bottom: 24px; }
 
 @media (max-width: 760px){
   .cv-grid{ grid-template-columns: 1fr; }
