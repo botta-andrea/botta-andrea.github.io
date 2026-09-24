@@ -147,15 +147,23 @@ section#home .section-heading{ margin-top: 0; }
   margin-top: 0;
 }
 .news-list {
-  list-style: none;
+  list-style: none; /* Rimuove i puntini di default del browser */
+  padding-left: 0;
   font-size: 14.5px;
   color: #2e2e2e;
 }
 .news-list li {
   margin-bottom: 12px;
-  padding-left: 12px;
-  border-left: 2px solid var(--color-border);
+  display: flex;
+  align-items: flex-start;
   line-height: 1.5;
+}
+.news-icon {
+  color: var(--color-accent);
+  font-size: 11px;
+  margin-top: 5px;
+  margin-right: 12px;
+  flex-shrink: 0;
 }
 .news-date {
   font-weight: 600;
@@ -167,7 +175,7 @@ section#home .section-heading{ margin-top: 0; }
 }
 
 .view-all-link {
-  margin-top: 32px;
+  margin-top: 65px; /* Aumentato lo spazio tra la card e il bottone */
   text-align: center;
   font-size: 14.5px;
 }
