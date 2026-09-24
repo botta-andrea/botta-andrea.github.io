@@ -3,7 +3,8 @@
    =========================================================== */
 
 :root{
-  --font-main: Helvetica, Arial, "Segoe UI", sans-serif;
+  /* Font aggiornato a Roboto per un look più morbido */
+  --font-main: 'Roboto', Helvetica, Arial, "Segoe UI", sans-serif;
 
   --font-size-base: 16px;
   --h1-size: 32px;
@@ -134,7 +135,7 @@ section#home .section-heading{ margin-top: 0; }
 .divider{
   border: none;
   border-top: 1px solid var(--color-border);
-  margin: 40px 0;
+  margin: 65px 0; /* Spazio aumentato */
 }
 
 /* ================= NEWS & FEATURED GRID (Sotto la riga) ================= */
@@ -147,23 +148,22 @@ section#home .section-heading{ margin-top: 0; }
   margin-top: 0;
 }
 .news-list {
-  list-style: none; /* Rimuove i puntini di default del browser */
+  list-style: none; 
   padding-left: 0;
   font-size: 14.5px;
   color: #2e2e2e;
 }
 .news-list li {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  padding: 4px 0 4px 14px; /* Spazio interno tra la barra e il testo */
+  border-left: 3px solid var(--color-border); /* Barra grigia verticale */
   display: flex;
   align-items: flex-start;
   line-height: 1.5;
+  transition: border-color 0.15s ease; /* Effetto hover morbido */
 }
-.news-icon {
-  color: var(--color-accent);
-  font-size: 11px;
-  margin-top: 5px;
-  margin-right: 12px;
-  flex-shrink: 0;
+.news-list li:hover {
+  border-left-color: var(--color-accent); /* La barra si illumina di blu al passaggio */
 }
 .news-date {
   font-weight: 600;
@@ -175,7 +175,7 @@ section#home .section-heading{ margin-top: 0; }
 }
 
 .view-all-link {
-  margin-top: 65px; /* Aumentato lo spazio tra la card e il bottone */
+  margin-top: 65px; 
   text-align: center;
   font-size: 14.5px;
 }
