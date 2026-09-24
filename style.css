@@ -449,3 +449,84 @@ footer {
 @media (max-width: 600px){
   .cv-header{ flex-direction: column; gap: 6px; }
 }
+
+
+/* ================= HOME GRID (Layout a due colonne) ================= */
+.home-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* 280px colonna sinistra, il resto colonna destra */
+  gap: 50px;
+  align-items: start;
+}
+
+.home-sidebar h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.home-sidebar .subtitle {
+  font-size: 14.5px;
+  color: var(--color-text-soft);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.home-sidebar .contacts {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.home-content .section-heading {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.home-content section {
+  margin-bottom: 40px;
+}
+
+/* ================= NEWS LIST ================= */
+.news-list {
+  list-style: none;
+  font-size: 15px;
+  color: #2e2e2e;
+}
+.news-list li {
+  margin-bottom: 12px;
+  padding-left: 12px;
+  border-left: 2px solid var(--color-border);
+  line-height: 1.5;
+}
+.news-date {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-right: 6px;
+}
+
+/* ================= VIEW ALL LINK ================= */
+.view-all-link {
+  margin-top: 16px;
+  font-size: 14.5px;
+}
+.view-all-link a {
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE HOME GRID ================= */
+@media (max-width: 760px) {
+  .home-grid {
+    grid-template-columns: 1fr; /* Su schermi piccoli torna a una sola colonna */
+    gap: 30px;
+  }
+  .home-sidebar {
+    text-align: center;
+  }
+  .home-sidebar .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
